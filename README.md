@@ -1,7 +1,7 @@
 TODO FULLSTACK
 
-- [ ] Design a database to store a list of tasks, e.g. task details, priority, completed yes/no
-- [ ] Build the migrations and seed data
+- [x] Design a database to store a list of tasks, e.g. task details, priority, completed yes/no
+- [x] Build the migrations and seed data
 - [ ] Build an API to list, add, update and delete
 - [ ] Test your API with Postman/Insomnia
 - [ ] Build React Components from static html
