@@ -30,7 +30,7 @@ function Todo (props) {
       <div className="view">
         <input className="toggle" type="checkbox" onClick={toggleCompleted} defaultChecked={checked} />
         <label>{todo.task}</label>
-        <button className="destroy" onClick={handleDelete}>x</button>
+        <button className="destroy" onClick={handleDelete}></button>
       </div>
     </li>
   )

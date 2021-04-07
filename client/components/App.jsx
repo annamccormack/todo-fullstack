@@ -15,7 +15,7 @@ function App (props) {
     return (
       <>
         <header className="header">
-          <h1>Todos</h1>
+          <h1>Todo</h1>
         </header>
         <section className="main">
           <AddTodo/>
