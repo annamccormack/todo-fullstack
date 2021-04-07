@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { addNewTodo } from '../actions/todos'
-// import { connect } from 'react-redux'
 
 function AddTodo (props) {
   const [newTodo, setNewTodo] = useState('')

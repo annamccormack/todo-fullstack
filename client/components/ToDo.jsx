@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { updatedTodo } from '../actions/todos'
+import { updatedTodo, deletedTodo } from '../actions/todos'
 
 function Todo (props) {
   const { dispatch, todo } = props
@@ -20,13 +20,17 @@ function Todo (props) {
     }))
     setCompleted === true ? setStatus('completed') : setStatus('edit')
   }
+
+  function handleDelete () {
+    dispatch(deletedTodo(id))
+  }
   
     return (
     <li>
       <div className="view">
         <input className="toggle" type="checkbox" onClick={toggleCompleted} defaultChecked={checked} />
         <label>{todo.task}</label>
-        {/* <button className="destroy" onClick={handleDelete}></button> */}
+        <button className="destroy" onClick={handleDelete}>x</button>
       </div>
     </li>
   )

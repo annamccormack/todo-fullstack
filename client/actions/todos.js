@@ -63,3 +63,20 @@ export function updatedTodo (update) {
     })
   }
 }
+
+export function deletedTodo (id) {
+  return (dispatch) => {
+    return deleteTodo(id)
+    .then(() => {
+      dispatch({
+        type: DELETE_TODO,
+        id: id
+      })
+      return null
+    })
+    .catch((err) => {
+        const errMessage = err.response?.text || err.message
+        dispatch(showError(errMessage))
+    })
+  }
+}
