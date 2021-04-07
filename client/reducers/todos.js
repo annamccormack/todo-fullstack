@@ -23,7 +23,7 @@ function todos (state = [], action) {
   }
 }
 
-function getUpdatedTodoList (todos, updatedTodos) {
+function getUpdatedTodoList (todos, updatedTodo) {
   const { id, completed } = updatedTodo
   return todos.map((todo) => {
     const updateCompleted = (todo.id === id) ? completed : todo.completed

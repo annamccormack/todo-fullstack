@@ -46,3 +46,20 @@ export function addNewTodo (newTodo) {
     })
   }
 }
+
+export function updatedTodo (update) {
+  return (dispatch) => {
+    return updateTodo(update)
+    .then((update) => {
+      dispatch({
+        type: UPDATE_TODO,
+        todo: update
+      })
+      return null
+    })
+    .catch((err) => {
+        const errMessage = err.response?.text || err.message
+        dispatch(showError(errMessage))
+    })
+  }
+}
