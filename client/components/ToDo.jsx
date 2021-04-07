@@ -1,12 +1,16 @@
-
 import React from 'react'
 
-function ToDo (props) {
-  return (
-    <>
-      <input className="new-todo" placeholder="What needs to be done?" autoFocus={true} />
-    </>
+function Todo (props) {
+  const { todo } = props
+    return (
+    <li>
+      {/* <div className="view"> */}
+        {/* <input className="toggle" type="checkbox" onClick={toggleCompleted} defaultChecked={checked} /> */}
+        <label>{todo.task}</label>
+        {/* <button className="destroy" onClick={handleDelete}></button> */}
+      {/* </div> */}
+    </li>
   )
 }
 
-export default ToDo
+export default Todo

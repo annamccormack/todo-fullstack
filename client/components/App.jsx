@@ -1,22 +1,33 @@
 
-import React from 'react'
-import Todo from './Todo'
+import React, { useEffect } from 'react'
+import ListTodos from './ListTodos'
+import { connect } from 'react-redux'
+import { fetchTodos } from '../actions/todos'
 
-class App extends React.Component {
-  componentDidMount () {}
+function App (props) {
+const { todos } = props
+console.log(todos)
+  useEffect(() => {
+    props.dispatch(fetchTodos())
+  }, [])
 
-  render () {
     return (
       <>
         <header className="header">
-          <h1>todos</h1>
-          <Todo />
+          <h1>Todos</h1>
         </header>
-        <section className="main"></section>
+        <section className="main">
+          <ListTodos todos={todos}/>
+        </section>
         <footer className="footer"></footer>
       </>
     )
   }
+
+function mapStateToProps (state) {
+  return {
+    todos: state.todos
+  }
 }
 
-export default App
+export default connect(mapStateToProps)(App)

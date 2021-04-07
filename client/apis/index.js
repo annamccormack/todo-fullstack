@@ -4,22 +4,22 @@ const apiUrl = 'api/v1/todos'
 // getTodos
 export function getTodos () {
   return request.get(apiUrl)  
-  .then(res => res.body}
+  .then(res => res.body)
 }
 // addTodos
-export function addTodos () {
+export function addTodo (newTodo) {
   return request.post(apiUrl)
-  .send(newTask)
+  .send(newTodo)
   .then(res => res.body)
 }
 // updateTodos
-export function updateTask (update) {
+export function updateTodo (update) {
   return request.patch(apiUrl)
     .send(update)
     .then(res => res.body)
 }
 // deleteTodos
-export function deleteTask (id) {
+export function deleteTodo (id) {
   return request.del(apiUrl)
     .send({ id })
 }
