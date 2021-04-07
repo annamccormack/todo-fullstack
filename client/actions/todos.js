@@ -26,6 +26,23 @@ export function fetchTodos () {
     .catch((err) => {
         const errMessage = err.response?.text || err.message
         dispatch(showError(errMessage))
+    })
+  }
+}
+
+export function addNewTodo (newTodo) {
+  return (dispatch) => {
+    return addTodo(newTodo)
+    .then((newTodo) => {
+      dispatch({
+        type: ADD_TODO,
+        todo: newTodo
       })
+      return null
+    })
+    .catch((err) => {
+        const errMessage = err.response?.text || err.message
+        dispatch(showError(errMessage))
+    })
   }
 }

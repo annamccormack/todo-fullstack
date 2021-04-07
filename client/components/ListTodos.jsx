@@ -5,7 +5,6 @@ function ListTodos (props) {
   const { todos } = props
   return (
     <>
-      <input className="new-todo" placeholder="What needs to be done?" autoFocus={true} />
       <ul className="todo-list">
         {todos.map((todo) => {
         return <Todo key={todo.id} todo={todo}/>
