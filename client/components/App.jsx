@@ -1,35 +1,27 @@
 
-import React, { useEffect } from 'react'
-import ListTodos from './ListTodos'
-import AddTodo from './AddTodo'
-import { connect } from 'react-redux'
-import { fetchTodos } from '../actions/todos'
+import React from 'react'
+import { Route } from 'react-router-dom'
 
-function App (props) {
-  const { todos } = props
-  console.log(todos)
-  useEffect(() => {
-    props.dispatch(fetchTodos())
-  }, [])
-  
+import Main from './Main'
+
+function App () {
+
     return (
-      <>
-        <header className="header">
-          <h1>Todo</h1>
-        </header>
-        <section className="main">
-          <AddTodo/>
-          <ListTodos todos={todos}/>
-        </section>
-        <footer className="footer"></footer>
-      </>
+       <>
+      <Route
+        path='/:filter?'
+        render={(routeProps) => {
+          const filter = routeProps.match.params.filter
+          // console.log('filter', filter)
+          return (
+            <>
+              <Main filter={filter}/>
+            </>
+          )
+        }}
+      />
+    </>
     )
 }
 
-function mapStateToProps (state) {
-  return {
-    todos: state.todos
-  }
-}
-
-export default connect(mapStateToProps)(App)
+export default App

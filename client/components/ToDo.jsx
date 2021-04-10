@@ -5,7 +5,7 @@ import { updatedTodo, deletedTodo } from '../actions/todos'
 function Todo (props) {
   const { dispatch, todo } = props
   const { task, id, completed } = todo
-
+  
   const initialStatus = !completed ? 'edit' : 'completed'
   const [status, setStatus] = useState(initialStatus)
 
@@ -26,10 +26,10 @@ function Todo (props) {
   }
   
     return (
-    <li>
+    <li className={status}>
       <div className="view">
         <input className="toggle" type="checkbox" onClick={toggleCompleted} defaultChecked={checked} />
-        <label>{todo.task}</label>
+        <label>{task}</label>
         <button className="destroy" onClick={handleDelete}></button>
       </div>
     </li>

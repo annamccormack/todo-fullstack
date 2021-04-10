@@ -17,7 +17,7 @@
     "knex": "knex --knexfile ./server/db/knexfile.js",
     "lint": "eslint --ext .js,.jsx ."
   },
-  "author": "EDA",
+  "author": "Anna",
   "license": "ISC",
   "keywords": [
     "fullstack"

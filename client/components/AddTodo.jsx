@@ -9,7 +9,7 @@ function AddTodo (props) {
     const { value } = e.target
     setNewTodo(value)
   }
-   console.log('new', newTodo)
+  //  console.log('new', newTodo)
   function handleSubmit (e) {
     e.preventDefault()
     props.dispatch(addNewTodo({ task: newTodo }))
